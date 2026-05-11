@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agustín Balegno | Bartender · Educator · Consultant</title>
+  <meta name="description" content="Interactive bilingual CV landing page for Agustín Balegno: professional bartender, educator, consultant and founder of ABB International Bartender Academy." />
+  <style>
+    :root{
+      --black:#070707;
+      --cream:#f4efe6;
+      --muted:#8f877a;
+      --line:rgba(255,255,255,.18);
+      --gold:#b08a52;
+      --red:#6b1710;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--black);color:var(--cream);font-family:Inter,Helvetica,Arial,sans-serif;line-height:1.5;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    .page{width:min(1180px,calc(100% - 32px));margin:0 auto}
+    header{position:fixed;top:0;left:0;right:0;z-index:30;background:linear-gradient(to bottom,rgba(0,0,0,.72),rgba(0,0,0,0));backdrop-filter:blur(10px)}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+    .brand{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:800}
+    .nav-links{display:flex;gap:22px;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:rgba(244,239,230,.72)}
+    .nav-links a:hover{color:#fff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:13px 18px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;transition:.25s ease;background:rgba(255,255,255,.03)}
+    .btn:hover{transform:translateY(-2px);background:#fff;color:#111;border-color:#fff}
+    .btn.gold{background:var(--gold);border-color:var(--gold);color:#080808}
+    .language-home{min-height:100vh;position:relative;display:grid;align-items:center;padding:130px 0 80px;overflow:hidden}
+    .language-home::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.48),rgba(0,0,0,.18)),linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0) 50%),url('13052024-_DSC5704.JPG');background-size:cover;background-position:center;filter:saturate(1.08);z-index:-2}
+    .language-home::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 22% 28%,rgba(176,138,82,.25),transparent 30%),radial-gradient(circle at 78% 16%,rgba(107,23,16,.38),transparent 34%);z-index:-1}
+    .home-box{max-width:880px}
+    .eyebrow{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:900;margin-bottom:22px}
+    h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:400;line-height:.96;margin:0;letter-spacing:-.055em}
+    h1{font-size:clamp(58px,9vw,126px);max-width:980px}
+    .home-lead,.lead{font-size:clamp(18px,2vw,25px);color:rgba(244,239,230,.76);max-width:720px;margin:28px 0 0;line-height:1.34}
+    .language-actions,.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .language-actions .btn{min-width:190px}
+    .language-label{display:block;margin-top:28px;color:rgba(244,239,230,.56);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+    .hero{min-height:100vh;position:relative;display:grid;align-items:end;padding:140px 0 70px;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.58) 43%,rgba(0,0,0,.12) 100%),linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0) 45%),url('13052024-_DSC5704.JPG');background-size:cover;background-position:center;filter:saturate(1.1);transform:scale(1.02);z-index:-2}
+    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 28%,rgba(176,138,82,.25),transparent 28%),radial-gradient(circle at 75% 18%,rgba(107,23,16,.35),transparent 33%);z-index:-1}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
+    .hero-panel{border:1px solid var(--line);background:rgba(10,10,10,.58);backdrop-filter:blur(18px);border-radius:28px;padding:26px;box-shadow:0 35px 110px rgba(0,0,0,.45)}
+    .availability{display:inline-flex;align-items:center;gap:10px;color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.14em;font-weight:800;margin-bottom:20px}
+    .dot{width:9px;height:9px;border-radius:50%;background:#33d17a;box-shadow:0 0 18px #33d17a}
+    .panel-title{font-size:34px;margin-bottom:12px}
+    .panel-text{color:rgba(244,239,230,.68);margin:0 0 22px}
+    .metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+    .metric{border:1px solid rgba(255,255,255,.13);border-radius:18px;padding:16px;background:rgba(255,255,255,.04)}
+    .metric strong{display:block;font-family:Georgia,'Times New Roman',serif;font-size:34px;font-weight:400;line-height:1}
+    .metric span{display:block;margin-top:8px;color:rgba(244,239,230,.6);font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+    section.content-section{padding:95px 0;border-top:1px solid rgba(255,255,255,.1)}
+    .section-head{display:grid;grid-template-columns:.55fr 1.45fr;gap:40px;align-items:end;margin-bottom:34px}
+    .section-kicker{color:var(--gold);font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:900}
+    h2{font-size:clamp(42px,5.5vw,76px)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));border-radius:26px;padding:28px;min-height:250px;transition:.25s ease}
+    .card:hover{transform:translateY(-4px);background:rgba(255,255,255,.09)}
+    .card h3{font-size:32px;margin-bottom:15px}
+    .card p{margin:0;color:rgba(244,239,230,.68)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .quote{background:var(--cream);color:#111;border-radius:34px;padding:50px}
+    .quote h2{color:#111}
+    .quote p{color:#5f574d;font-size:19px;max-width:650px}
+    .dark-card{border:1px solid rgba(255,255,255,.13);border-radius:34px;padding:40px;background:rgba(255,255,255,.05)}
+    .list{display:grid;gap:12px;margin-top:24px}
+    .item{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid rgba(255,255,255,.1);padding:15px 0;color:rgba(244,239,230,.72)}
+    .item strong{color:#fff}
+    .links{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .link{border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:24px;background:rgba(255,255,255,.04);min-height:150px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s ease}
+    .link:hover{background:#fff;color:#111;transform:translateY(-3px)}
+    .link strong{font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:400;letter-spacing:-.04em}
+    .link span{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:inherit;opacity:.66}
+    .final{padding:110px 0;text-align:center;background:radial-gradient(circle at center,rgba(176,138,82,.18),transparent 42%)}
+    .final h2{max-width:980px;margin:0 auto 22px}
+    .final p{max-width:680px;margin:0 auto 34px;color:rgba(244,239,230,.72);font-size:19px}
+    footer{padding:28px 0;color:rgba(244,239,230,.58);font-size:12px;border-top:1px solid rgba(255,255,255,.1)}
+    .footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .lang-block{display:none}
+    .lang-block:target{display:block}
+    body:has(.lang-block:target) .language-home{display:none}
+    body:not(:has(.lang-block:target)) #es{display:block}
+    @media(max-width:900px){.nav-links{display:none}.hero,.language-home{padding-top:120px}.hero-grid,.section-head,.split{grid-template-columns:1fr}.cards,.links{grid-template-columns:1fr}.hero-panel{margin-top:34px}.metrics{grid-template-columns:1fr}h1{font-size:clamp(52px,16vw,78px)}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="page nav">
+      <a class="brand" href="#home">Agustín Balegno</a>
+      <nav class="nav-links">
+        <a href="#es">Español</a>
+        <a href="#en">English</a>
+        <a href="https://www.agustinbalegnobartender.com" target="_blank" rel="noopener">Web</a>
+      </nav>
+      <a class="btn gold" href="https://wa.me/5493512857799?text=Hola%20Agust%C3%ADn%2C%20vi%20tu%20perfil%20profesional%20y%20quiero%20contactarte" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="language-home">
+      <div class="page home-box">
+        <div class="eyebrow">Professional Bartender · Educator · Consultant</div>
+        <h1>Choose your language.</h1>
+        <p class="home-lead">Interactive professional profile for bartending, hospitality, training and consulting opportunities.</p>
+        <div class="language-actions">
+          <a class="btn gold" href="#es">Español</a>
+          <a class="btn" href="#en">English</a>
+        </div>
+        <span class="language-label">Agustín Balegno · Behind the Bar</span>
+      </div>
+    </section>
+
+    <div id="es" class="lang-block">
+      <section class="hero">
+        <div class="page hero-grid">
+          <div>
+            <div class="eyebrow">Bartender profesional · Educador · Consultor</div>
+            <h1>Detrás de una barra también se construye una experiencia.</h1>
+            <p class="lead">Soy Agustín Balegno. Trabajo en coctelería, servicio y formación gastronómica desde hace más de 17 años. Estoy disponible para barras, eventos, hoteles, restaurantes, marcas, capacitaciones y proyectos donde la barra tenga que funcionar con criterio, presencia y resultados.</p>
+            <div class="actions">
+              <a class="btn gold" href="https://wa.me/5493512857799?text=Hola%20Agust%C3%ADn%2C%20quiero%20hablar%20con%20vos%20por%20una%20propuesta%20de%20trabajo" target="_blank" rel="noopener">Contratar / Contactar</a>
+              <a class="btn" href="#es-bartending">Ver perfil</a>
+              <a class="btn" href="https://www.agustinbalegnobartender.com" target="_blank" rel="noopener">Web</a>
+            </div>
+          </div>
+          <aside class="hero-panel">
+            <div class="availability"><span class="dot"></span>Disponible para propuestas</div>
+            <h3 class="panel-title">Bartending, hospitalidad y entrenamiento de equipos.</h3>
+            <p class="panel-text">Perfil híbrido: operación real de barra, desarrollo de menús, comunicación con clientes, formación de bartenders y mirada estratégica para negocios gastronómicos.</p>
+            <div class="metrics">
+              <div class="metric"><strong>17+</strong><span>Años en industria</span></div>
+              <div class="metric"><strong>ABB</strong><span>Academia propia</span></div>
+              <div class="metric"><strong>+1000</strong><span>Alumnos y equipos</span></div>
+              <div class="metric"><strong>LATAM</strong><span>Experiencia regional</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="es-bartending" class="content-section">
+        <div class="page">
+          <div class="section-head"><div class="section-kicker">01 · Bartending</div><h2>Un bartender con lectura de servicio, técnica y capacidad de liderazgo.</h2></div>
+          <div class="cards">
+            <article class="card"><h3>Servicio</h3><p>Lectura de cliente, comunicación clara, presencia detrás de barra y criterio para sostener una experiencia consistente aun en momentos de alta demanda.</p></article>
+            <article class="card"><h3>Técnica</h3><p>Preparación de cócteles clásicos y contemporáneos, mise en place, control de insumos, estandarización, velocidad, limpieza operativa y precisión.</p></article>
+            <article class="card"><h3>Equipo</h3><p>Capacidad para ordenar procesos, entrenar bartenders, acompañar aperturas, mejorar rutinas de servicio y profesionalizar la operación.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="page split">
+          <div class="quote"><div class="section-kicker">02 · Perfil profesional</div><h2>Mi trabajo no es solo preparar tragos.</h2><p>Es entender qué necesita una barra para vender mejor, trabajar más ordenada, comunicar con más intención y crear una experiencia que el cliente recuerde.</p></div>
+          <div class="dark-card"><div class="section-kicker">Áreas de experiencia</div><div class="list"><div class="item"><strong>Bartender profesional</strong><span>Barras, eventos, guest shifts</span></div><div class="item"><strong>Formación</strong><span>Cursos, talleres, equipos</span></div><div class="item"><strong>Consultoría</strong><span>Menú, operación, procesos</span></div><div class="item"><strong>Hospitalidad</strong><span>Servicio, comunicación, experiencia</span></div><div class="item"><strong>Gestión</strong><span>Mise en place, costos, control</span></div></div></div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="page">
+          <div class="section-head"><div class="section-kicker">03 · Servicios</div><h2>Disponible para trabajar en distintos formatos.</h2></div>
+          <div class="cards"><article class="card"><h3>Bartender</h3><p>Servicio profesional para barras, eventos, aperturas, pop ups, activaciones de marca, hoteles, restaurantes y experiencias privadas.</p></article><article class="card"><h3>Capacitación</h3><p>Entrenamiento de equipos de barra y salón: técnica, mise en place, comunicación, estándares de servicio y consistencia operativa.</p></article><article class="card"><h3>Consultoría</h3><p>Diagnóstico y mejora de barras: carta de cócteles, procesos, costos, narrativa de menú, roles, rutinas y experiencia del cliente.</p></article></div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="page">
+          <div class="section-head"><div class="section-kicker">04 · Links</div><h2>Redes, academia, contenido y contacto directo.</h2></div>
+          <div class="links"><a class="link" href="https://www.agustinbalegnobartender.com" target="_blank" rel="noopener"><strong>Web</strong><span>agustinbalegnobartender.com</span></a><a class="link" href="https://www.instagram.com/agustinbalegnobartender" target="_blank" rel="noopener"><strong>Instagram</strong><span>@agustinbalegnobartender</span></a><a class="link" href="https://www.instagram.com/abb_cocktail" target="_blank" rel="noopener"><strong>Academia</strong><span>@abb_cocktail</span></a><a class="link" href="https://youtube.com/@agustinbalegnobartender7980?si=4f4FdkvqOCC9xTx-" target="_blank" rel="noopener"><strong>YouTube</strong><span>Canal educativo</span></a></div>
+        </div>
+      </section>
+
+      <section class="final">
+        <div class="page">
+          <h2>¿Necesitás un bartender, un formador o alguien que ordene tu barra?</h2>
+          <p>Escribime por WhatsApp y contame qué tipo de propuesta tenés: trabajo en barra, evento, consultoría, capacitación, marca, hotel o restaurante.</p>
+          <div class="actions" style="justify-content:center"><a class="btn gold" href="https://wa.me/5493512857799?text=Hola%20Agust%C3%ADn%2C%20quiero%20contactarte%20por%20una%20propuesta" target="_blank" rel="noopener">Escribirme por WhatsApp</a><a class="btn" href="mailto:agustinbalegno@hotmail.com">Enviar email</a><a class="btn" href="#home">Cambiar idioma</a></div>
+        </div>
+      </section>
+    </div>
+
+    <div id="en" class="lang-block">
+      <section class="hero">
+        <div class="page hero-grid">
+          <div>
+            <div class="eyebrow">Professional Bartender · Educator · Consultant</div>
+            <h1>Behind the bar, an experience is being built.</h1>
+            <p class="lead">I’m Agustín Balegno. I have worked in cocktails, service and hospitality training for more than 17 years. I’m available for bars, events, hotels, restaurants, brands, training programs and projects where the bar needs to perform with clarity, presence and results.</p>
+            <div class="actions">
+              <a class="btn gold" href="https://wa.me/5493512857799?text=Hi%20Agust%C3%ADn%2C%20I%20saw%20your%20professional%20profile%20and%20would%20like%20to%20contact%20you" target="_blank" rel="noopener">Hire / Contact</a>
+              <a class="btn" href="#en-bartending">View profile</a>
+              <a class="btn" href="https://www.agustinbalegnobartender.com" target="_blank" rel="noopener">Website</a>
+            </div>
+          </div>
+          <aside class="hero-panel">
+            <div class="availability"><span class="dot"></span>Available for opportunities</div>
+            <h3 class="panel-title">Bartending, hospitality and team training.</h3>
+            <p class="panel-text">A hybrid professional profile: real bar operations, cocktail menu development, guest communication, bartender training and strategic thinking for hospitality businesses.</p>
+            <div class="metrics">
+              <div class="metric"><strong>17+</strong><span>Years in the industry</span></div>
+              <div class="metric"><strong>ABB</strong><span>Own academy</span></div>
+              <div class="metric"><strong>+1000</strong><span>Students and teams</span></div>
+              <div class="metric"><strong>LATAM</strong><span>Regional experience</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="en-bartending" class="content-section">
+        <div class="page">
+          <div class="section-head"><div class="section-kicker">01 · Bartending</div><h2>A bartender with service awareness, technique and leadership skills.</h2></div>
+          <div class="cards">
+            <article class="card"><h3>Service</h3><p>Guest reading, clear communication, strong bar presence and the ability to maintain a consistent experience even during high-volume service.</p></article>
+            <article class="card"><h3>Technique</h3><p>Classic and contemporary cocktails, mise en place, ingredient control, recipe standardization, speed, clean operation and precision.</p></article>
+            <article class="card"><h3>Team</h3><p>Ability to organize processes, train bartenders, support openings, improve service routines and professionalize bar operations.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="page split">
+          <div class="quote"><div class="section-kicker">02 · Professional profile</div><h2>My work is not only about making drinks.</h2><p>It is about understanding what a bar needs to sell better, work with more order, communicate with more intention and create an experience the guest remembers.</p></div>
+          <div class="dark-card"><div class="section-kicker">Areas of experience</div><div class="list"><div class="item"><strong>Professional bartender</strong><span>Bars, events, guest shifts</span></div><div class="item"><strong>Training</strong><span>Courses, workshops, teams</span></div><div class="item"><strong>Consulting</strong><span>Menu, operation, processes</span></div><div class="item"><strong>Hospitality</strong><span>Service, communication, experience</span></div><div class="item"><strong>Management</strong><span>Mise en place, costs, control</span></div></div></div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="page">
+          <div class="section-head"><div class="section-kicker">03 · Services</div><h2>Available to work across different formats.</h2></div>
+          <div class="cards"><article class="card"><h3>Bartender</h3><p>Professional bar service for bars, events, openings, pop-ups, brand activations, hotels, restaurants and private experiences.</p></article><article class="card"><h3>Training</h3><p>Bar and service team training: technique, mise en place, communication, service standards and operational consistency.</p></article><article class="card"><h3>Consulting</h3><p>Bar diagnosis and improvement: cocktail menu, processes, costs, menu storytelling, roles, routines and guest experience.</p></article></div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="page">
+          <div class="section-head"><div class="section-kicker">04 · Links</div><h2>Social media, academy, content and direct contact.</h2></div>
+          <div class="links"><a class="link" href="https://www.agustinbalegnobartender.com" target="_blank" rel="noopener"><strong>Website</strong><span>agustinbalegnobartender.com</span></a><a class="link" href="https://www.instagram.com/agustinbalegnobartender" target="_blank" rel="noopener"><strong>Instagram</strong><span>@agustinbalegnobartender</span></a><a class="link" href="https://www.instagram.com/abb_cocktail" target="_blank" rel="noopener"><strong>Academy</strong><span>@abb_cocktail</span></a><a class="link" href="https://youtube.com/@agustinbalegnobartender7980?si=4f4FdkvqOCC9xTx-" target="_blank" rel="noopener"><strong>YouTube</strong><span>Educational channel</span></a></div>
+        </div>
+      </section>
+
+      <section class="final">
+        <div class="page">
+          <h2>Need a bartender, trainer or someone to organize your bar?</h2>
+          <p>Message me on WhatsApp and tell me what kind of opportunity you have: bar work, event, consulting, training, brand activation, hotel or restaurant project.</p>
+          <div class="actions" style="justify-content:center"><a class="btn gold" href="https://wa.me/5493512857799?text=Hi%20Agust%C3%ADn%2C%20I%20would%20like%20to%20contact%20you%20about%20a%20professional%20opportunity" target="_blank" rel="noopener">Message me on WhatsApp</a><a class="btn" href="mailto:agustinbalegno@hotmail.com">Send email</a><a class="btn" href="#home">Change language</a></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="page footer-row">
+      <span>© Agustín Balegno · Bartender · Educator · Consultant</span>
+      <span>Interactive CV · ES / EN</span>
+    </div>
+  </footer>
+</body>
+</html>
